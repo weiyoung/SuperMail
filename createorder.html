@@ -1,0 +1,66 @@
+<!doctype html>
+
+<style>
+    .btm-space {
+       margin-bottom: 30px;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <title>Place your order - SuperMail</title>
+</head>
+
+<body>
+    <h2>Send gifts! Send love! Send something!</h2>
+    <br>
+    <p>Place an order here! Powered by SuperMail.</p>
+    <br>
+
+    <form action="createorder.php" method="post"> 
+        <label>Order ID </label>
+        <input name="order_id" type="text" placeholder="int">
+        <br>
+        <label>Customer ID </label>
+        <input name="customer_id" type="text" placeholder="int">
+        <br>
+        <label>Employer ID </label>
+        <input name="eid" type="text" placeholder="int">
+        <br>
+        <label>Initial Date </label>
+        <input name="initial_date" type="text" placeholder="YYYY-MM-DD">
+        <br>
+        <label>Delivery Date </label>
+        <input name="delivery_date" type="text" placeholder="YYYY-MM-DD">
+        <br>
+        <label>Priority </label>
+        <select name="priority">
+            <option value = 'low' selected>Low</option>
+            <option value = 'medium' >Medium</option>
+            <option value = 'high' >High</option>
+        </select>
+        <br>
+        <label>Delivery Status </label>
+        <select name="delivery_status">
+            <option value = 'pending' selected>Pending Delivery</option>
+            <option value = 'enroute' >Enroute</option>
+            <option value = 'delivered' >Delivered</option>
+        </select>
+        <br>
+        <label>Pricing </label>
+        <input name="pricing" type="text" placeholder="2 dec places max">
+        <br>
+        <label>Receiver ID </label>
+        <input name="receiver_id" type="text" placeholder="int">
+        <br>
+        <input type="submit" value="Place Order">
+    </form>
+    <br>
+
+    <form action="index.html" method="post">
+        <input type="submit" value="Back">
+    </form>
+
+</body>
+
+</html>
