@@ -32,7 +32,7 @@ CREATE TABLE Employee (
 CREATE TABLE EmployeeWorkArea (
   EID INT PRIMARY KEY,
   Work_Area CHAR(20),
-  FOREIGN KEY (EID) REFERENCES Employee(EID) ON DELETE CASCADE
+  FOREIGN KEY (EID) REFERENCES Employee(EID) ON DELETE SET NULL
 );
 
 CREATE TABLE PostOfficeDetails (
@@ -70,7 +70,7 @@ CREATE TABLE DeliveryOrder (
     Pricing REAL,
     Receiver_ID INT,
     FOREIGN KEY (Customer_ID) REFERENCES Customer(CUSTOMER_ID),
-    FOREIGN KEY (EID) REFERENCES Employee(EID),
+    FOREIGN KEY (EID) REFERENCES Employee(EID) ON DELETE SET NULL,
     FOREIGN KEY (Receiver_ID) REFERENCES Receiver(Receiver_ID)
 );
 
