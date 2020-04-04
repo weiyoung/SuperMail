@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html>
 <style>
     .btm-space {
@@ -16,7 +17,8 @@
     <h2>Input your Order ID:</h2>
     <br>
 
-    <form action="update.php" method="post"> This page returns successful or failed update message
+    <form action="update.php" method="post">
+    This page returns successful or failed update message
     <br>
     <input name="order_ID" type="text" placeholder="order ID">
     <br>
@@ -25,10 +27,14 @@
         <select name = 'drop_down'>
             <option value = 'pending' selected>Pending delivery</option>
             <option value = 'enroute' >Enroute</option>
-            <option value = 'deliverd'>Delivered</option>
+            <option value = 'delivered' >Delivered</option>
         </select>
     <br>
     <input type="submit" value="Update">
+    </form>
+
+    <form action="index.html" method="post">
+        <input type="submit" value="Back">
     </form>
 
 </body>

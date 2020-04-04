@@ -2,41 +2,7 @@
     <input type="submit" value="Back">
 </form>
 
-<html>
-    <h2>This is your</h2>
-    <br>
-</html>
-
 <?php
-
-function showThisOrder($obConn,$sql) {
-  $rsResult = mysqli_query($obConn, $sql) or die(mysqli_error($obConn));
-  if(mysqli_num_rows($rsResult)>0) {
-    echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#CCCCCC\">";
-    $i = 0;
-
-    //retrive field names
-    while ($i < mysqli_num_fields($rsResult)) {
-      $field = mysqli_fetch_field_direct($rsResult, $i);
-      $fieldName=$field->name;
-      echo "<td><strong>$fieldName</strong></td>";
-      $i = $i + 1;
-    }
-
-    //field names retrieved. now dump info
-    $bolWhite=true;
-    while ($row = mysqli_fetch_assoc($rsResult)) {
-      echo $bolWhite ? "<tr bgcolor=\"#CCCCCC\">" : "<tr bgcolor=\"#FFF\">";
-        $bolWhite = !$bolWhite; 
-        foreach ($row as $data) {
-          echo "<td>$data</td>"; 
-        }
-        echo "</tr>";
-    }
-
-  }
-
-}
 
 include 'connect.php';
 $conn = OpenCon();
@@ -51,18 +17,39 @@ $status = $_POST['delivery_status'];
 $pricing = $_POST['pricing'];
 $receiver_id = $_POST['receiver_id'];
 
-$sql = "INSERT INTO DeliveryOrder
-        VALUES ('%$order_id%', 
-                '%$customer_id%', 
-                '%$eid%', 
-                '%$i_date%', 
-                '%$d_date%', 
-                '%$priority%', 
-                '%$status%', 
-                '%$pricing%', 
-                '%$receiver_id%'
-        ";
-showThisOrder($conn, $sql);
+$sql = "INSERT INTO DeliveryOrder (
+                    order_id,
+                    customer_id,
+                    eid,
+                    initial_date,
+                    delivery_date,
+                    priority,
+                    delivery_status,
+                    pricing,
+                    receiver_id )
+        VALUES ('$order_id', 
+                '$customer_id', 
+                '$eid', 
+                '$i_date', 
+                '$d_date', 
+                '$priority', 
+                '$status', 
+                '$pricing', 
+                '$receiver_id')";
+if ($conn->query($sql) === TRUE) { 
+    echo nl2br("Record updated successfully!\n");
+    echo nl2br("Order ID : $order_id\n");
+    echo nl2br("Customer ID : $customer_id\n");
+    echo nl2br("Employer ID : $eid\n");
+    echo nl2br("Order Date : $i_date\n");
+    echo nl2br("Delivery Date : $d_date\n");
+    echo nl2br("Priority : $priority\n");
+    echo nl2br("Delivery Status : $status\n");
+    echo nl2br("Pricing : \$$pricing\n");
+    echo nl2br("Receiver ID : $receiver_id\n");
+} else {
+    echo "Error updating record: " . $conn->error;
+}
 CloseCon($conn);
 
 ?>

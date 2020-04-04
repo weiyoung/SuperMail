@@ -1,3 +1,7 @@
+<form action="tracking.html" method="post">
+  <input type="submit" value="Back">
+</form>
+
 <?php
 
 function showThisOrder($obConn,$sql) {
@@ -39,7 +43,3 @@ showThisOrder($conn, $sql);
 CloseCon($conn);
 
 ?>
-
-<form action="tracking.html" method="post">
-  <input type="submit" value="Back">
-</form>
