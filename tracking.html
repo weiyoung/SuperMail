@@ -13,15 +13,21 @@
 
 
 <body>
-    <h2>Input your Order ID:</h2>
+    <h2>Track your order!</h2>
     <br>
 
-    <form action="tracking.php" method="post"> This page returns the Orders
+    <form action="tracking.php" method="post"> 
+        Enter your Order ID
+        <br>
+        <input name="where_cols" type="text" 
+        placeholder="enter order ID">
+        <br>
+        <input type="submit" value="Search">
+    </form>
     <br>
-    <input name="where_cols" type="text" 
-    placeholder="<label>comma to separate</label>">
-    <br>
-    <input type="submit" value="Search">
+
+    <form action="index.html" method="post">
+        <input type="submit" value="Back">
     </form>
 
 </body>

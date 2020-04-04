@@ -32,10 +32,14 @@ function showThisOrder($obConn,$sql) {
 include 'connect.php';
 $conn = OpenCon();
 $where_cols = $_POST['where_cols'];
-$sql = "SELECT order_id, customer_id, eid, initial_date, delivery_date, priority, delivery_status, pricing, receiver_id 
+$sql = "SELECT order_id, initial_date, delivery_date, delivery_status 
         FROM deliveryorder
         WHERE order_id like '%$where_cols%'";
 showThisOrder($conn, $sql);
 CloseCon($conn);
 
 ?>
+
+<form action="tracking.html" method="post">
+  <input type="submit" value="Back">
+</form>
