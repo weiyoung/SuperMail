@@ -45,7 +45,8 @@ if ($conn->query($sql) === TRUE) {
     echo nl2br("Delivery Date : $d_date\n");
     echo nl2br("Priority : $priority\n");
     echo nl2br("Delivery Status : $status\n");
-    echo nl2br("Pricing : \$$pricing\n");
+    $number = number_format($pricing, 2, '.', ',');
+    echo nl2br("Pricing : \$$number\n");
     echo nl2br("Receiver ID : $receiver_id\n");
 } else {
     echo "Error updating record: " . $conn->error;
