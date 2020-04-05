@@ -1,11 +1,24 @@
-<form action="index.html" method="post">
-  <input type="submit" value="Back">
-</form>
+<!DOCTYPE html>
+<html>
 
-<h2>Who are our popular customers?</h2>
-<br>
-<p>(customers that have been served by all employees)</p>
-<br>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="headingBanner-popular">
+        <form action="index.html" method="post">
+            <button class="home-btn" type="submit" value="Back"><i class="fa fa-home" aria-hidden="true" ></i></button>
+            <!-- <input type="submit" value="Back"> -->
+        </form>
+        <div class="headingTitle-popular">
+        <h2>Who are our popular customers?</h2>
+        <!-- <p>(customers that have been served by all employees)</p> -->
+        </div>
+    </div>
 
 <?php
 
@@ -19,10 +32,10 @@ function showThisOrder($obConn,$sql) {
       //table data
       $bolWhite=true;
       while ($row = mysqli_fetch_assoc($rsResult)) {
-        echo $bolWhite ? "<tr bgcolor=\"#CCCCCC\">" : "<tr bgcolor=\"#FFF\">";
+        echo $bolWhite ? "<tr bgcolor=\"#fff\">" : "<tr bgcolor=\"#FFF\">";
           $bolWhite = !$bolWhite; 
           foreach ($row as $data) {
-            echo "<td>$data</td>"; 
+            echo "<td style = \"text-align: center; padding: 15px 0; border: 1px solid; color: #333;\">$data</td>"; 
           }
           echo "</tr>";
       }
@@ -44,3 +57,7 @@ showThisOrder($conn, $sql);
 CloseCon($conn);
 
 ?>
+
+</body>
+
+</html>

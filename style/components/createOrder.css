@@ -22,7 +22,7 @@
 }
 
 .headingTitle-create {
-	padding: 45px 50px;
+	padding: 15px 50px;
 }
 
 .text-link-wrapper {
@@ -273,4 +273,21 @@
 
 .placeOrder-btn input:hover {
     background-image: linear-gradient(to top, #42a1ec, #3c9fed, #369ced, #309aee, #2997ee);
+}
+
+.home-btn {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+}
+
+.home-btn i {
+	color: #fff;
+	font-size: 35px;
+}
+
+.home-btn:hover {
+  transform: scale(1.5);
+  -webkit-transition: all 100ms ease;
 }

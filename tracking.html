@@ -1,36 +1,91 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-<style>
-    .btm-space {
-       margin-bottom: 30px;
-    }
-  </style>
 
 <head>
     <meta charset="utf-8">
     <title>Order Tracking - SuperMail</title>
+    <link rel="stylesheet" type="text/css" href="style/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
 <body>
-    <form action="index.html" method="post">
-        <input type="submit" value="Back">
-    </form>
-    <br>
-    
-    <h2>Track your order!</h2>
-    <br>
 
-    <form action="tracking.php" method="post"> 
-        <label>Enter your Order ID</label>
-        <br>
-        <input name="where_cols" type="text" 
-        placeholder="enter order ID">
-        <br>
-        <input type="submit" value="Search">
-    </form>
-    <br>
+    <div class="headingBanner-tracking">
+
+        <form action="index.html" method="post">
+        <button class="home-btn" type="submit" value="Back"><i class="fa fa-home" aria-hidden="true" ></i></button>
+        <!--         <input type="submit" value="Back"> -->
+        </form>
+
+        <div class="headingTitle-tracking">
+            <h1>Track Your Order</h1>
+        </div>
+
+        <form action="tracking.php" method="post">
+            <div class="searchWrapper">
+            <input class="searchInput" name="where_cols" type="text" placeholder="Enter Order ID">
+            <!--         <input class="search-btn" type="submit" value="Search"> -->
+            <button class="search-btn" type="submit" value="Search"><i class="fa fa-search" style="color: #757575;"></i></button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="divider" style="margin-bottom: 3%;">
+    </div>
+
+    <div class="itemWrapper">
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='createorder.html'">
+        <div class="itemIcon"><i class="fa fa-pencil-square-o"></i></div><br>Create</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='update.html'">
+        <div class="itemIcon"><i class="fa fa-refresh" aria-hidden="true"></i></div><br>Update</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='tracking.html'">
+        <div class="itemIcon"><i class="fa fa-compass" aria-hidden="true"></i></div><br>Track</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='delete.html'">
+        <div class="itemIcon"><i class="fa fa-trash" aria-hidden="true"></i></div><br>Delete</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='traceemployee.html'">
+        <div class="itemIcon"><i class="fa fa-search" aria-hidden="true"></i></div><br>Trace Employee</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='employeeworkarea.php'">
+        <div class="itemIcon"><i class="fa fa-map-o" aria-hidden="true"></i></div><br>Employee Workarea</button>
+        </div>
+        
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='pricings.php'">
+        <div class="itemIcon"><i class="fa fa-credit-card" aria-hidden="true"></i></div><br>Pricings</button>
+        </div>
+    
+        <div class="grid-item"> 
+        <button class="btm-space" type="submit" onclick="window.location.href='largestorder.php'">
+        <div class="itemIcon"><i class="fa fa-line-chart" aria-hidden="true"></i></div><br>Largest Order</button>
+        </div>
+
+        <div class="grid-item"> 
+        <button class="btm-space" type="submit" onclick="window.location.href='popularcustomer.php'">
+        <div class="itemIcon"><i class="fa fa-fire" aria-hidden="true"></i></div><br>Popular Customer</button>
+        </div>
+        
+    </div>
+
+    <div class="divider" style="margin-bottom: 3%;">
+    </div>
 
 </body>
 

@@ -10,7 +10,7 @@ $eid = $_POST['eid'];
 $sql = "DELETE FROM Employee 
       WHERE EID like '%$eid%'" ;  
 if ($conn->query($sql) === TRUE) { 
-  echo "Employee deleted successfully";
+  echo "Deleted!";
 } else {
   echo "Error deleting employee: " . $conn->error;
 } 

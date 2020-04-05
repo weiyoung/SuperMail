@@ -1,10 +1,13 @@
 .headingBanner-tracking {
-	height: 170px;
+	height: 570px;
 	width: 100%;
-	background-image: url("https://appleid.cdn-apple.com/static/bin/cb401238999/dist/assets/apple_id_recovery_2880x340.jpg");
+	background-image: url("../../images/banner.jpg");
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 60px;
 }
 
-.headingBanner-tracking h1 {
+.headingTitle-tracking h1 {
 	color: #fff;
 	font-size: 40px;
 	text-align: center;
@@ -13,3 +16,43 @@
 	letter-spacing: 0.5px;
 	font-weight: 200;
 }
+
+.headingTitle-tracking {
+	margin-top: 100px;
+	padding: 45px 50px;
+}
+
+.searchWrapper {
+	text-align: center;
+}
+
+.searchInput {
+	width: 729px;
+    height: 56px;
+	padding: 0 10px;
+	font-size: 27px;
+	font-weight: 100;
+	letter-spacing: -.022em;
+	color: #333;
+	text-align: left;
+	border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: none;
+}
+
+.search-btn {
+    height: 58px;
+	padding: 0 18px;
+	font-size: 27px;
+	font-weight: 100;
+	letter-spacing: -.022em;
+	color: #757575;
+	text-align: left;
+	border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: none;
+    cursor: pointer;
+}
+

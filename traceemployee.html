@@ -1,36 +1,91 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-<style>
-    .btm-space {
-       margin-bottom: 30px;
-    }
-  </style>
-
 <head>
     <meta charset="utf-8">
     <title>Trace Employee - SuperMail</title>
+    <link rel="stylesheet" type="text/css" href="style/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-
 <body>
-    <form action="index.html" method="post">
-        <input type="submit" value="Back">
-    </form>
-    <br>
+
+    <div class="headingBanner-trace">
+        <form action="index.html" method="post">
+        <button class="home-btn" type="submit" value="Back" ><i class="fa fa-home" aria-hidden="true" ></i></button>
+        <!--       <input type="submit" value="Back"> -->
+        </form>
+
+        <div class="headingTitle-trace">
+        <h1>Wonder who was in charge of your order? Find that employee!</h1>
+        </div>
+
+        <div class="searchWrapper">
+            <form action="traceemployee.php" method="post"> 
+            <!--         <label>Enter your Order ID</label> -->
+        
+            <input class="searchInput" name="order_id" type="text" placeholder="Enter order ID">
+            <!--         <input type="submit" value="Search"> -->
+            <button class="search-btn" type="submit" value="Search"><i class="fa fa-search" style="color: #757575;"></i></button>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="divider" style="margin-bottom: 3%;">
+    </div>
+
+    <div class="itemWrapper">
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='createorder.html'">
+        <div class="itemIcon"><i class="fa fa-pencil-square-o"></i></div><br>Create</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='update.html'">
+        <div class="itemIcon"><i class="fa fa-refresh" aria-hidden="true"></i></div><br>Update</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='tracking.html'">
+        <div class="itemIcon"><i class="fa fa-compass" aria-hidden="true"></i></div><br>Track</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='delete.html'">
+        <div class="itemIcon"><i class="fa fa-trash" aria-hidden="true"></i></div><br>Delete</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='traceemployee.html'">
+        <div class="itemIcon"><i class="fa fa-search" aria-hidden="true"></i></div><br>Trace Employee</button>
+        </div>
+
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='employeeworkarea.php'">
+        <div class="itemIcon"><i class="fa fa-map-o" aria-hidden="true"></i></div><br>Employee Workarea</button>
+        </div>
+        
+        <div class="grid-item">
+        <button class="btm-space" type="submit" onclick="window.location.href='pricings.php'">
+        <div class="itemIcon"><i class="fa fa-credit-card" aria-hidden="true"></i></div><br>Pricings</button>
+        </div>
     
-    <h2>Wonder who was in charge of your order? Find that employee!</h2>
-    <br>
+        <div class="grid-item"> 
+        <button class="btm-space" type="submit" onclick="window.location.href='largestorder.php'">
+        <div class="itemIcon"><i class="fa fa-line-chart" aria-hidden="true"></i></div><br>Largest Order</button>
+        </div>
 
-    <form action="traceemployee.php" method="post"> 
-        <label>Enter your Order ID</label>
-        <br>
-        <input name="order_id" type="text" placeholder="enter order ID">
-        <br>
-        <input type="submit" value="Search">
-    </form>
-    <br>
+        <div class="grid-item"> 
+        <button class="btm-space" type="submit" onclick="window.location.href='popularcustomer.php'">
+        <div class="itemIcon"><i class="fa fa-fire" aria-hidden="true"></i></div><br>Popular Customer</button>
+        </div>
+        
+    </div>
 
+    <div class="divider" style="margin-bottom: 3%;">
+    </div>
+    
 </body>
 
 </html>

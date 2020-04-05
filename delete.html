@@ -1,34 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<style>
-    .btm-space {
-       margin-bottom: 30px;
-    }
-  </style>
-
 <head>
     <meta charset="utf-8">
     <title>Delete - SuperMail</title>
+    <link rel="stylesheet" type="text/css" href="style/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-
 <body>
+
+<div class="headingBanner-delete">
     <form action="index.html" method="post">
-        <input type="submit" value="Back">
+        <button class="home-btn" type="submit" value="Back" ><i style="color: #333;" class="fa fa-home" aria-hidden="true" ></i></button>
+<!--         <input type="submit" value="Back"> -->
     </form>
-    <br>
-    
-    <h2>Input employee ID to be deleted:</h2>
-    <br>
+    <div class="headingTitle-delete">
+    <h1>Input employee ID to be deleted</h1>
+    </div>
 
     <form action="delete.php" method="post"> 
-        <label>Which employee do you want to delete?</label>
-        <br>
-        <input name="eid" type="text" placeholder="employee ID">
-        <br>
-        <input type="submit" value="Delete">
+        <div class="searchWrapper">
+<!--         <label>Which employee do you want to delete?</label> -->
+        <input class="searchInput" name="eid" type="text" placeholder="Enter Employee ID">
+<!--         <input type="submit" value="Delete"> -->
+        <button class="search-btn" type="submit" value="Delete"><i class="fa fa-trash" style="color: #757575;"></i></button>
+
+    </div>
     </form>
-    <br>
+</div>
+
+
+<div class="divider" style="margin-bottom: 3%;">
+
+    </div>
+
+<div class="itemWrapper">
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='createorder.html'">
+    <div class="itemIcon"><i class="fa fa-pencil-square-o"></i></div><br>Create</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='update.html'">
+    <div class="itemIcon"><i class="fa fa-refresh" aria-hidden="true"></i></div><br>Update</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='tracking.html'">
+    <div class="itemIcon"><i class="fa fa-compass" aria-hidden="true"></i></div><br>Track</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='delete.html'">
+    <div class="itemIcon"><i class="fa fa-trash" aria-hidden="true"></i></div><br>Delete</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='traceemployee.html'">
+    <div class="itemIcon"><i class="fa fa-search" aria-hidden="true"></i></div><br>Trace Employee</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='employeeworkarea.php'">
+    <div class="itemIcon"><i class="fa fa-map-o" aria-hidden="true"></i></div><br>Employee Workarea</button>
+    </div>
+    
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='pricings.php'">
+    <div class="itemIcon"><i class="fa fa-credit-card" aria-hidden="true"></i></div><br>Pricings</button>
+    </div>
+   
+    <div class="grid-item"> 
+    <button class="btm-space" type="submit" onclick="window.location.href='largestorder.php'">
+    <div class="itemIcon"><i class="fa fa-line-chart" aria-hidden="true"></i></div><br>Largest Order</button>
+    </div>
+
+    <div class="grid-item"> 
+    <button class="btm-space" type="submit" onclick="window.location.href='popularcustomer.php'">
+    <div class="itemIcon"><i class="fa fa-fire" aria-hidden="true"></i></div><br>Popular Customer</button>
+    </div>
+
+</div>
+
+<div class="divider" style="margin-bottom: 3%;">
+</div>
 
 </body>
 

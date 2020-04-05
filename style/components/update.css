@@ -99,3 +99,13 @@
     outline: 0;
     box-shadow: 0 0 0 3px rgba(131,192,253,.5);
 }
+
+.home-btn i {
+	color: #fff;
+	font-size: 35px;
+}
+
+.home-btn:hover {
+  transform: scale(1.5);
+  -webkit-transition: all 100ms ease;
+}

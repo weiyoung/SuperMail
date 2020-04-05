@@ -1,0 +1,23 @@
+.headingBanner-delete {
+	height: 570px;
+	width: 100%;
+	background-image: url("../../images/banner1.jpg");
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 60px;
+}
+
+.headingTitle-delete h1 {
+	color: #333;
+	font-size: 40px;
+	text-align: center;
+	line-height: 30px;
+	text-shadow: 0 0 30px rgba(0,0,0,.5);
+	letter-spacing: 0.5px;
+	font-weight: 200;
+}
+
+.headingTitle-delete {
+	margin-top: 100px;
+	padding: 45px 50px;
+}

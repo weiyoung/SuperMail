@@ -1,13 +1,13 @@
 INSERT INTO Employee
-VALUES (1111, 'Jessica', 454019173);
+VALUES (1111, 'John', 454019173);
 INSERT INTO Employee
-VALUES (2222, 'Sarah', 556667777);
+VALUES (2222, 'Chris', 556667777);
 INSERT INTO Employee
-VALUES (3333, 'Thomas', 556887115);
+VALUES (3333, 'Bill', 556887115);
 INSERT INTO Employee
-VALUES (4444, 'Frank', 455889966);
+VALUES (4444, 'Ahmed', 455889966);
 INSERT INTO Employee
-VALUES (5555, 'Jamie', 978883125);
+VALUES (5555, 'Lee', 978883125);
 
 INSERT INTO EmployeeWorkArea
 VALUES (1111, 'Vancouver');
@@ -54,15 +54,15 @@ INSERT INTO MailboxServicedBy
 VALUES (5000, 95);
 
 INSERT INTO Customer
-VALUES (101, 'Alicia', 135530195, '451 East Mall, Vancouver, BC');
+VALUES (101, 'Madi', 135530195, '451 East Mall, Vancouver, BC');
 INSERT INTO Customer
-VALUES (102, 'Ryan', 135589195, '4256 Main Mall, Richmond, BC');
+VALUES (102, 'Jessica', 135589195, '4256 Main Mall, Richmond, BC');
 INSERT INTO Customer
-VALUES (103, 'Jamie', 144530195, '46 West Mall, Burnaby, BC');
+VALUES (103, 'Weiyoung', 144530195, '46 West Mall, Burnaby, BC');
 INSERT INTO Customer
-VALUES (104, 'Jessica', 135533695, '1 Whistler Mountain Rd, Whistler, BC');
+VALUES (104, 'Hazra', 135533695, '1 Whistler Mountain Rd, Whistler, BC');
 INSERT INTO Customer
-VALUES (105, 'Andrew', 155555195, '1 Whistler Mountain Rd, Whistler, BC');
+VALUES (105, 'Jessica', 155555195, '1 Whistler Mountain Rd, Whistler, BC');
 
 INSERT INTO Receiver
 VALUES (111, 'Travis', '33 Kerr St, Vancouver, BC', 'v4a2w2');

@@ -1,16 +1,29 @@
-<form action="index.html" method="post">
-  <input type="submit" value="Back">
-</form>
+<!DOCTYPE html>
+<html>
 
-<h2>This is where our employees work:</h2>
-<br>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="headingBanner-employee">
+        <form action="index.html" method="post">
+        <button class="home-btn" type="submit" value="Back"><i class="fa fa-home" aria-hidden="true" ></i></button>
+        <!-- <input type="submit" value="Back"> -->
+        </form>
+        <div class="headingTitle-employee">
+        <h2>This is where our employees work:</h2>
+        </div>
+    </div>
 
 <?php
 
 function showThisOrder($obConn,$sql) {
     $rsResult = mysqli_query($obConn, $sql) or die(mysqli_error($obConn));
     if(mysqli_num_rows($rsResult)>0) {
-      echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#CCCCCC\">";
+      echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#fff\">";
   
       echo "<td><strong>Employee Name</strong></td>";
       echo "<td><strong>Work Area</strong></td>";
@@ -21,7 +34,7 @@ function showThisOrder($obConn,$sql) {
         echo $bolWhite ? "<tr bgcolor=\"#CCCCCC\">" : "<tr bgcolor=\"#FFF\">";
           $bolWhite = !$bolWhite; 
           foreach ($row as $data) {
-            echo "<td>$data</td>"; 
+            echo "<td style = \"text-align: center; padding: 15px 0; border: 1px solid; color: #333;\">$data</td>"; 
           }
           echo "</tr>";
       }
@@ -40,3 +53,6 @@ showThisOrder($conn, $sql);
 CloseCon($conn);
 
 ?>
+
+</body>
+</html>

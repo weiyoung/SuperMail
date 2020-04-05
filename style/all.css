@@ -3,3 +3,9 @@
 @import url('components/createOrder.css');
 @import url('components/update.css');
 @import url('components/tracking.css');
+@import url('components/delete.css');
+@import url('components/traceemployee.css');
+@import url('components/pricing.css');
+@import url('components/largestOrder.css');
+@import url('components/popularCustomer.css');
+@import url('components/employeeArea.css');
