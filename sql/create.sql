@@ -1,14 +1,3 @@
-DROP TABLE Items;
-DROP TABLE DeliveryOrder;
-DROP TABLE EmployeeWorkArea;
-DROP TABLE MailboxServicedBy;
-DROP TABLE PostOffice;
-DROP TABLE AreaServicedByPO;
-DROP TABLE PostOfficeDetails;
-DROP TABLE Customer;
-DROP TABLE Receiver;
-DROP TABLE Employee;
-
 CREATE TABLE Customer (
   Customer_ID INT PRIMARY KEY,
   Customer_Name CHAR(20),
@@ -32,13 +21,13 @@ CREATE TABLE Employee (
 CREATE TABLE EmployeeWorkArea (
   EID INT PRIMARY KEY,
   Work_Area CHAR(20),
-  FOREIGN KEY (EID) REFERENCES Employee(EID) ON DELETE SET NULL
+  FOREIGN KEY (EID) REFERENCES Employee(EID) ON DELETE CASCADE
 );
 
 CREATE TABLE PostOfficeDetails (
-                                   POID INT PRIMARY KEY,
-                                   Location CHAR(20),
-                                   City CHAR(20)
+  POID INT PRIMARY KEY,
+  Location CHAR(20),
+  City CHAR(20)
 );
 
 CREATE TABLE MailboxServicedBy(
@@ -56,34 +45,31 @@ CREATE TABLE PostOffice (
 CREATE TABLE AreaServicedByPO (
   POID INT PRIMARY KEY,
   Work_Area CHAR(20),
-  FOREIGN KEY  (POID) REFERENCES POSTOFFICEDETAILS(POID)
+  FOREIGN KEY (POID) REFERENCES POSTOFFICEDETAILS(POID)
 );
 
 CREATE TABLE DeliveryOrder (
-    Order_ID INT PRIMARY KEY,
-    Customer_ID INT,
-    EID INT,
-    INITIAL_DATE DATE,
-     DELIVERY_DATE DATE,
-     Priority CHAR(6),
-    Delivery_Status CHAR(10),
-    Pricing REAL,
-    Receiver_ID INT,
-    FOREIGN KEY (Customer_ID) REFERENCES Customer(CUSTOMER_ID),
-    FOREIGN KEY (EID) REFERENCES Employee(EID) ON DELETE SET NULL,
-    FOREIGN KEY (Receiver_ID) REFERENCES Receiver(Receiver_ID)
+  Order_ID INT PRIMARY KEY,
+  Customer_ID INT,
+  EID INT,
+  INITIAL_DATE DATE,
+  DELIVERY_DATE DATE,
+  Priority CHAR(6),
+  Delivery_Status CHAR(10),
+  Pricing REAL,
+  Receiver_ID INT,
+  FOREIGN KEY (Customer_ID) REFERENCES Customer(CUSTOMER_ID),
+  FOREIGN KEY (EID) REFERENCES Employee(EID) ON DELETE SET NULL,
+  FOREIGN KEY (Receiver_ID) REFERENCES Receiver(Receiver_ID)
 );
 
 CREATE TABLE Items (
-   Item_ID INT PRIMARY KEY,
-   Order_ID INT,
-   LENGTH INT,
-   WIDTH INT,
-   HEIGHT INT,
-   Weight INT,
-   Fragility CHAR(6),
-   FOREIGN KEY (Order_ID) REFERENCES DeliveryOrder(Order_ID) ON DELETE
-       CASCADE
-)
-
-
+  Item_ID INT PRIMARY KEY,
+  Order_ID INT,
+  LENGTH INT,
+  WIDTH INT,
+  HEIGHT INT,
+  Weight INT,
+  Fragility CHAR(6),
+  FOREIGN KEY (Order_ID) REFERENCES DeliveryOrder(Order_ID) ON DELETE CASCADE
+);

@@ -84,24 +84,40 @@ VALUES (003, 103, 4444, '2020-01-20','2020-02-01', 'medium', 'delivered', 58.00,
 INSERT INTO DeliveryOrder
 VALUES (004, 104, 1111, '2020-03-28','2020-04-01', 'high', 'delivered', 288.43, 115);
 INSERT INTO DeliveryOrder
-VALUES (005, 105, 2222, '2020-02-8', NULL,'high', 'enroute', 6.99, 111);
+VALUES (005, 103, 2222, '2020-02-08', NULL,'low', 'enroute', 6.99, 111);
+INSERT INTO DeliveryOrder
+VALUES (006, 103, 3333, '2020-03-08', '2020-03-18','high', 'delivered', 8.99, 112);
+INSERT INTO DeliveryOrder
+VALUES (007, 103, 1111, '2020-03-18', NULL,'low', 'enroute', 26.99, 115);
+INSERT INTO DeliveryOrder
+VALUES (008, 103, 5555, '2020-03-28', NULL,'medium', 'enroute', 99.95, 113);
+INSERT INTO DeliveryOrder
+VALUES (009, 105, 2222, '2020-04-01', NULL,'medium', 'enroute', 61.99, 111);
 
 INSERT INTO Items
 VALUES (1, 001, 1, 2, 3, 1, 'TRUE');
 INSERT INTO Items
 VALUES (2, 002, 2, 2, 3, 1, 'FALSE');
 INSERT INTO Items
-VALUES (3, 003, 22, 4, 2, 1, 'TRUE');
+VALUES (3, 002, 22, 4, 2, 3, 'TRUE');
 INSERT INTO Items
 VALUES (4, 002, 11, 4, 2, 1, 'FALSE');
 INSERT INTO Items
-VALUES (5, 002, 5, 6, 7, 1, 'FALSE');
+VALUES (5, 003, 5, 6, 7, 1, 'FALSE');
 INSERT INTO Items
-VALUES (6, 004, 1, 5, 3, 1, 'FALSE');
+VALUES (6, 004, 1, 5, 3, 2, 'FALSE');
 INSERT INTO Items
-VALUES (7, 005, 3, 2, 4, 1, 'TRUE');
+VALUES (7, 005, 3, 2, 4, 5, 'TRUE');
 INSERT INTO Items
-VALUES (8, 005, 2, 2, 2, 1, 'TRUE');
+VALUES (8, 005, 2, 2, 2, 8, 'TRUE');
+INSERT INTO Items
+VALUES (9, 006, 2, 2, 3, 1, 'FALSE');
+INSERT INTO Items
+VALUES (10, 007, 2, 4, 2, 2, 'TRUE');
+INSERT INTO Items
+VALUES (11, 008, 6, 4, 2, 9, 'FALSE');
+INSERT INTO Items
+VALUES (712, 009, 3, 2, 4, 1, 'TRUE');
 
 INSERT INTO PostOffice
 VALUES ('V4V4V4', 93);

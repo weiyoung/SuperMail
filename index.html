@@ -1,41 +1,76 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-<style>
-    .btm-space {
-       margin-bottom: 30px;
-    }
-  </style>
-
 <head>
     <meta charset="utf-8">
     <title>SuperMail - your super mail</title>
+    <link rel="stylesheet" type="text/css" href="style/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-
 <body>
-    <h1>SUPERMAIL</h1>
-    <br>
-    <h2>Please select one of these options:</h2>
-    <br>
-    <button class="btm-space" type="submit" onclick="window.location.href='createorder.html'">CREATE ORDER (insert)</button>
-    <br>
-    <button class="btm-space" type="submit" onclick="window.location.href='update.html'">UPDATE (update)</button>
-    <br>
-    <button class="btm-space" type="submit" onclick="window.location.href='tracking.html'">TRACK (selection, projection)</button>
-    <br>
-    <button class="btm-space" type="submit" onclick="window.location.href='delete.html'">DELETE (delete)</button>
-    <br>
-    <button class="btm-space" type="submit" onclick="window.location.href='traceemployee.html'">TRACE EMPLOYEE (nested selection, projection)</button>
-    <br>
-    <button class="btm-space" type="submit" onclick="window.location.href='employeeworkarea.php'">EMPLOYEE WORKAREA (join)</button>
-    <br>
-    <button class="btm-space" type="submit" onclick="window.location.href='pricings.php'">PRICINGS (aggregate)</button>
-    <br>
-    <button class="btm-space" type="submit" onclick="window.location.href='largestorder.php'">LARGEST ORDER (nested aggregate)</button>
-    <br>
+
+<div class="headingBanner">
+    <div class="heading">
+        <h1>SuperMail</h1>
+    </div>
+</div>
+
+<div class="headingTitle">
+    <h2>Welcome to SuperMail<h2>Please select one of these options:</h2>
+</div>
+
+<div class="divider" style="margin-bottom: 3%;">
+
+    </div>
 
 
+<div class="itemWrapper">
+
+
+        <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='createorder.html'">
+        <div class="itemIcon"><i class="fa fa-pencil-square-o"></i></div><br>Create</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='update.html'">
+    <div class="itemIcon"><i class="fa fa-refresh" aria-hidden="true"></i></div><br>Update</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='tracking.html'">
+    <div class="itemIcon"><i class="fa fa-compass" aria-hidden="true"></i></div><br>Track</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='delete.html'">
+        <div class="itemIcon"><i class="fa fa-trash" aria-hidden="true"></i></div><br>Delete</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='traceemployee.html'">
+    <div class="itemIcon"><i class="fa fa-search" aria-hidden="true"></i></div><br>Trace Employee</button>
+    </div>
+
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='employeeworkarea.php'">
+        <div class="itemIcon"><i class="fa fa-map-o" aria-hidden="true"></i></div><br>Employee Workarea</button>
+    </div>
+    
+    <div class="grid-item">
+    <button class="btm-space" type="submit" onclick="window.location.href='pricings.php'">
+    <div class="itemIcon"><i class="fa fa-credit-card" aria-hidden="true"></i></div><br>Pricings</button>
+    </div>
+   
+   <div class="grid-item"> 
+    <button class="btm-space" type="submit" onclick="window.location.href='largestorder.php'">
+        <div class="itemIcon"><i class="fa fa-line-chart" aria-hidden="true"></i></div><br>Largest Order</button>
+</div>
+</div>
+
+<div class="divider">
+
+    </div>
 </body>
 
 </html>

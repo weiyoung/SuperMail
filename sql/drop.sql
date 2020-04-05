@@ -1,0 +1,10 @@
+DROP TABLE Items;
+DROP TABLE DeliveryOrder;
+DROP TABLE EmployeeWorkArea;
+DROP TABLE MailboxServicedBy;
+DROP TABLE PostOffice;
+DROP TABLE AreaServicedByPO;
+DROP TABLE PostOfficeDetails;
+DROP TABLE Customer;
+DROP TABLE Receiver;
+DROP TABLE Employee;
