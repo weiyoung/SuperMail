@@ -1,0 +1,61 @@
+//These are all the quereies used in SuperMail
+
+//insert -- createorder.php
+INSERT INTO DeliveryOrder ( order_id,
+                            customer_id,
+                            eid,
+                            initial_date,
+                            delivery_date,
+                            priority,
+                            delivery_status,
+                            pricing,
+                            receiver_id )
+VALUES ('$order_id', 
+        '$customer_id', 
+        '$eid', 
+        '$i_date', 
+        '$d_date', 
+        '$priority', 
+        '$status', 
+        '$pricing', 
+        '$receiver_id') ;
+
+//update -- update.php
+UPDATE DeliveryOrder 
+SET Delivery_Status = '$dropdownValue'
+WHERE Order_ID like '%$order%' ;
+
+//selection, projection -- tracking.php
+SELECT order_id, initial_date, delivery_date, delivery_status 
+FROM deliveryorder
+WHERE order_id like '%$where_cols%' ;
+
+//delete -- delete.php
+DELETE FROM Employee 
+WHERE EID like '%$eid%' ;  
+
+//nested selection, projection -- traceemployee.php
+SELECT employee.ename, employee.ephone
+FROM employee
+WHERE employee.eid like (SELECT deliveryorder.eid
+                        FROM deliveryorder
+                        WHERE order_id like '%$order_id%') ;
+
+//join -- employeeworkarea.php
+SELECT employee.ename, employeeworkarea.work_area
+FROM employee
+INNER JOIN employeeworkarea ON employee.eid=employeeworkarea.eid
+ORDER BY employee.ename ASC ;
+
+//aggregate -- pricings.php
+SELECT MIN(pricing), MAX(pricing), AVG(pricing)
+FROM deliveryorder ;
+
+//nested aggregate -- largestorder.php
+SELECT MAX(x.num)
+FROM    (SELECT COUNT(*) AS num
+        FROM items GROUP BY order_id)x ;
+
+//division -- ???
+//TODO
+
