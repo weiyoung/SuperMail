@@ -12,7 +12,8 @@ $sql = "UPDATE DeliveryOrder
         SET Delivery_Status = '$dropdownValue'
         WHERE Order_ID like '%$order%'";  
 if ($conn->query($sql) === TRUE) { 
-  echo "Record updated successfully";
+  echo nl2br("Record updated successfully!\n");
+  echo nl2br("Order $order updated to $dropdownValue.\n");
 } else {
   echo "Error updating record: " . $conn->error;
 } 

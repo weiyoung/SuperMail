@@ -13,18 +13,22 @@
 
 
 <body>
-    <h2>Input employee ID to be deleted:</h2>
-    <br>
-
-    <form action="delete.php" method="post"> This page returns successful or failed delete message
-    <br>
-    <input name="eid" type="text" placeholder="employee ID">
-    <br>
-    <input type="submit" value="Delete">
-    </form>
     <form action="index.html" method="post">
         <input type="submit" value="Back">
     </form>
+    <br>
+    
+    <h2>Input employee ID to be deleted:</h2>
+    <br>
+
+    <form action="delete.php" method="post"> 
+        <label>Which employee do you want to delete?</label>
+        <br>
+        <input name="eid" type="text" placeholder="employee ID">
+        <br>
+        <input type="submit" value="Delete">
+    </form>
+    <br>
 
 </body>
 

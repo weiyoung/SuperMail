@@ -1,3 +1,7 @@
+<form action="delete.html" method="post">
+    <input type="submit" value="Back">
+</form>
+
 <?php
 
 include 'connect.php';

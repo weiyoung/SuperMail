@@ -14,28 +14,30 @@
 
 
 <body>
-    <h2>Input your Order ID:</h2>
-    <br>
-
-    <form action="update.php" method="post">
-    This page returns successful or failed update message
-    <br>
-    <input name="order_ID" type="text" placeholder="order ID">
-    <br>
-    <br>
-    <label>Change to: </label>
-        <select name = 'drop_down'>
-            <option value = 'pending' selected>Pending delivery</option>
-            <option value = 'enroute' >Enroute</option>
-            <option value = 'delivered' >Delivered</option>
-        </select>
-    <br>
-    <input type="submit" value="Update">
-    </form>
-
     <form action="index.html" method="post">
         <input type="submit" value="Back">
     </form>
+    <br>
+    
+    <h2>Input your Order ID:</h2>
+    <br>
+
+    <form action="update.php" method="post"> 
+        <label>Which order would you like to update?</label>
+        <br>
+        <input name="order_ID" type="text" placeholder="order ID">
+        <br>
+        <br>
+        <label>Change to: </label>
+            <select name = 'drop_down'>
+                <option value = 'pending' selected>Pending delivery</option>
+                <option value = 'enroute' >Enroute</option>
+                <option value = 'delivered' >Delivered</option>
+            </select>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
 
 </body>
 
