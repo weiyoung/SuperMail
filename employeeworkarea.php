@@ -24,17 +24,23 @@ function showThisOrder($obConn,$sql) {
     $rsResult = mysqli_query($obConn, $sql) or die(mysqli_error($obConn));
     if(mysqli_num_rows($rsResult)>0) {
       echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#fff\">";
-  
-      echo "<td><strong>Employee Name</strong></td>";
-      echo "<td><strong>Work Area</strong></td>";
+      $i = 0;
+
+      //retrive field names
+      while ($i < mysqli_num_fields($rsResult)) {
+        $field = mysqli_fetch_field_direct($rsResult, $i);
+        $fieldName=$field->name;
+        echo "<td style = \"text-align: center; padding: 15px 0; border: 0px ; color: #333;\">$fieldName</td>"; 
+        $i = $i + 1;
+      }
       
       //table data
       $bolWhite=true;
       while ($row = mysqli_fetch_assoc($rsResult)) {
-        echo $bolWhite ? "<tr bgcolor=\"#CCCCCC\">" : "<tr bgcolor=\"#FFF\">";
+        echo $bolWhite ? "<tr bgcolor=\"#b3f0ff\">" : "<tr bgcolor=\"#FFF\">";
           $bolWhite = !$bolWhite; 
           foreach ($row as $data) {
-            echo "<td style = \"text-align: center; padding: 15px 0; border: 1px solid; color: #333;\">$data</td>"; 
+            echo "<td style = \"text-align: center; padding: 15px 0; border: 0px ; color: #333;\">$data</td>"; 
           }
           echo "</tr>";
       }

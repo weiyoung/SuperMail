@@ -23,11 +23,29 @@
         </div>
 
         <form action="tracking.php" method="post">
+
+            <!-- first search box -->
             <div class="searchWrapper">
-            <input class="searchInput" name="where_cols" type="text" placeholder="Enter Order ID">
-            <!--         <input class="search-btn" type="submit" value="Search"> -->
-            <button class="search-btn" type="submit" value="Search"><i class="fa fa-search" style="color: #757575;"></i></button>
+                <input class="searchInput" name="where_cols" type="text" placeholder="Enter Order ID">
+                <button class="search-btn" type="submit" value="Search"><i class="fa fa-search" style="color: #757575;"></i></button>
             </div>
+
+            <div class="updateOrder">
+            <!-- second search box -->
+                <div class="updateDropdown">
+                    <br>
+                    <br>
+                    <br>
+                    <h1>What to display: </h1>
+                    <br>
+                    <select name = 'cust_cols'>
+                        <option value = 'delivery_date' selected>Delivery Date</option>
+                        <option value = 'priority' >Priority</option>
+                        <option value = 'pricing' >Pricing</option>
+                    </select>
+                </div>
+            </div>
+
         </form>
 
     </div>

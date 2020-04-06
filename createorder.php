@@ -1,6 +1,22 @@
-<form action="createorder.html" method="post">
-    <input type="submit" value="Back">
-</form>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="headingBanner">
+        <form action="index.html" method="post">
+        <button class="home-btn" type="submit" value="Back"><i class="fa fa-home" aria-hidden="true" ></i></button>
+        <!-- <input type="submit" value="Back"> -->
+        </form>
+        <div class="headingTitle-employee">
+            <h2>Successfully created order!</h2>
+        </div>
+    </div>
 
 <?php
 
@@ -36,21 +52,28 @@ $sql = "INSERT INTO DeliveryOrder (
                 '$status', 
                 '$pricing', 
                 '$receiver_id')";
+
+echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#fff\">";
 if ($conn->query($sql) === TRUE) { 
-    echo nl2br("Record updated successfully!\n");
-    echo nl2br("Order ID : $order_id\n");
-    echo nl2br("Customer ID : $customer_id\n");
-    echo nl2br("Employer ID : $eid\n");
-    echo nl2br("Order Date : $i_date\n");
-    echo nl2br("Delivery Date : $d_date\n");
-    echo nl2br("Priority : $priority\n");
-    echo nl2br("Delivery Status : $status\n");
+    echo "<tr><td style = \"text-align: left; padding: 15px 30px; border: 0px ; color: #333;\">Order ID : $order_id</td></tr>";
+    echo "<tr><td style = \"text-align: left; padding: 15px 30px; border: 0px ; color: #333;\">Customer ID : $customer_id</td></tr>";
+    echo "<tr><td style = \"text-align: left; padding: 15px 30px; border: 0px ; color: #333;\">Employer ID : $eid</td></tr>";
+    echo "<tr><td style = \"text-align: left; padding: 15px 30px; border: 0px ; color: #333;\">Order Date : $i_date</td></tr>";
+    echo "<tr><td style = \"text-align: left; padding: 15px 30px; border: 0px ; color: #333;\">Delivery Date : $d_date</td></tr>";
+    echo "<tr><td style = \"text-align: left; padding: 15px 30px; border: 0px ; color: #333;\">Priority : $priority</td></tr>";
+    echo "<tr><td style = \"text-align: left; padding: 15px 30px; border: 0px ; color: #333;\">Delivery Status : $status</td></tr>";
     $number = number_format($pricing, 2, '.', ',');
-    echo nl2br("Pricing : \$$number\n");
-    echo nl2br("Receiver ID : $receiver_id\n");
+    echo "<tr><td style = \"text-align: left; padding: 15px 30px; border: 0px ; color: #333;\">Pricing : \$$number</td></tr>";
+    echo "<tr><td style = \"text-align: left; padding: 15px 30px; border: 0px ; color: #333;\">Receiver ID : $receiver_id</td></tr>";
+
 } else {
     echo "Error updating record: " . $conn->error;
 }
+echo "</table>";
+
 CloseCon($conn);
 
 ?>
+
+</body>
+</html>
