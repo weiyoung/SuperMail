@@ -1,5 +1,5 @@
 -- These are all the quereies used in the SuperMail project
---
+
 -- insert -- createorder.php
 INSERT INTO DeliveryOrder ( order_id,
                             customer_id,
