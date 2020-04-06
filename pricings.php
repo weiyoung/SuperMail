@@ -25,7 +25,8 @@ function showThisOrder($obConn,$sql) {
     $rsResult = mysqli_query($obConn, $sql) or die(mysqli_error($obConn));
     if(mysqli_num_rows($rsResult)>0) {
         
-      echo "<td><strong>Prices:</strong></td>";
+      echo "<h3>Prices:</h3>";
+      echo nl2br("\n");
       echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#f2f2f2\">";
   
       echo "<td style = \"text-align: center; padding: 15px 0;\"><strong>Minimum</strong></td>";
@@ -35,11 +36,11 @@ function showThisOrder($obConn,$sql) {
       //table data
       $bolWhite=true;
       while ($row = mysqli_fetch_assoc($rsResult)) {
-        echo $bolWhite ? "<tr bgcolor=\"#fff\">" : "<tr bgcolor=\"#FFF\">";
+        echo $bolWhite ? "<tr bgcolor=\"#ffc53d\">" : "<tr bgcolor=\"#FFF\">";
           $bolWhite = !$bolWhite; 
           foreach ($row as $data) {
             $number = number_format($data, 2, '.', ',');
-            echo "<td style = \"text-align: center; padding: 15px 0; border: 1px solid; color: #333;\">$$number</td>"; 
+            echo "<td style = \"text-align: center; padding: 15px 0; border: 0px; color: #333;\">$$number</td>"; 
           }
           echo "</tr>";
       }

@@ -26,13 +26,14 @@ function showThisOrder($obConn,$sql) {
     $rsResult = mysqli_query($obConn, $sql) or die(mysqli_error($obConn));
     if(mysqli_num_rows($rsResult)>0) {
         
-      echo "<td><strong>Customer name:</strong></td>";
+      echo "<h3>Popular customers:</h3>";
+      echo nl2br("\n");
       echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#CCCCCC\">";
       
       //table data
       $bolWhite=true;
       while ($row = mysqli_fetch_assoc($rsResult)) {
-        echo $bolWhite ? "<tr bgcolor=\"#fff\">" : "<tr bgcolor=\"#FFF\">";
+        echo $bolWhite ? "<tr bgcolor=\"#ffc53d\">" : "<tr bgcolor=\"#FFF\">";
           $bolWhite = !$bolWhite; 
           foreach ($row as $data) {
             echo "<td style = \"text-align: center; padding: 15px 0; border: 1px solid; color: #333;\">$data</td>"; 
