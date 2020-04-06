@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Delete Employee - SuperMail</title>
     <link rel="stylesheet" type="text/css" href="style/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -24,7 +25,7 @@ include 'connect.php';
 $conn = OpenCon();
 $eid = $_POST['eid'];
 $sql = "DELETE FROM Employee 
-      WHERE EID like '%$eid%'" ;  
+      WHERE EID = $eid" ;  
 
 echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#fff\">";
 if ($conn->query($sql) === TRUE) { 

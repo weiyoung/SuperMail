@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Trace Employee - SuperMail</title>
     <link rel="stylesheet" type="text/css" href="style/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -54,9 +55,9 @@ $conn = OpenCon();
 $order_id = $_POST['order_id'];
 $sql = "SELECT employee.ename, employee.ephone
         FROM employee
-        WHERE employee.eid like (SELECT deliveryorder.eid
-                                    FROM deliveryorder
-                                    WHERE order_id = $order_id )" ;
+        WHERE employee.eid = (SELECT deliveryorder.eid
+                              FROM deliveryorder
+                              WHERE order_id = $order_id )" ;
 showThisOrder($conn, $sql);
 CloseCon($conn);
 

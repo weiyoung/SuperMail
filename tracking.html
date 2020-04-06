@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Order Tracking - SuperMail</title>
+    <title>Track Order - SuperMail</title>
     <link rel="stylesheet" type="text/css" href="style/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -19,7 +19,7 @@
         </form>
 
         <div class="headingTitle-tracking">
-            <h1>Track Your Order</h1>
+            <h1>Track your order!</h1>
         </div>
 
         <form action="tracking.php" method="post">
@@ -33,11 +33,7 @@
             <div class="updateOrder">
             <!-- second search box -->
                 <div class="updateDropdown">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <h1>What to display: </h1>
+                    <h1 style="margin-top: 100px; color: black; font-size: 120%; font-weight: 600; text-shadow: -1px -1px 7px #FFFFFF;">Display order ID, initial date, delivery status and...</h1>
                     <br>
                     <select name = 'cust_cols'>
                         <option value = 'delivery_date' selected>Delivery Date (empty if null)</option>
@@ -45,67 +41,12 @@
                         <option value = 'pricing' >Pricing</option>
                     </select>
                     <br>
-                    <h1>(Displays order ID, initial date, delivery status and above option)</h1>
+                    <!-- <h1 style="color: black; font-size: 150%; font-weight: 300;"><center>(Displays order ID, initial date, delivery status and above option)</center></h1> -->
                 </div>
             </div>
 
         </form>
 
-    </div>
-
-    <div class="divider" style="margin-bottom: 3%;">
-    </div>
-
-    <div class="itemWrapper">
-
-        <div class="grid-item">
-        <button class="btm-space" type="submit" onclick="window.location.href='createorder.html'">
-        <div class="itemIcon"><i class="fa fa-pencil-square-o"></i></div><br>Create</button>
-        </div>
-
-        <div class="grid-item">
-        <button class="btm-space" type="submit" onclick="window.location.href='update.html'">
-        <div class="itemIcon"><i class="fa fa-refresh" aria-hidden="true"></i></div><br>Update</button>
-        </div>
-
-        <div class="grid-item">
-        <button class="btm-space" type="submit" onclick="window.location.href='tracking.html'">
-        <div class="itemIcon"><i class="fa fa-compass" aria-hidden="true"></i></div><br>Track</button>
-        </div>
-
-        <div class="grid-item">
-        <button class="btm-space" type="submit" onclick="window.location.href='delete.html'">
-        <div class="itemIcon"><i class="fa fa-trash" aria-hidden="true"></i></div><br>Delete</button>
-        </div>
-
-        <div class="grid-item">
-        <button class="btm-space" type="submit" onclick="window.location.href='traceemployee.html'">
-        <div class="itemIcon"><i class="fa fa-search" aria-hidden="true"></i></div><br>Trace Employee</button>
-        </div>
-
-        <div class="grid-item">
-        <button class="btm-space" type="submit" onclick="window.location.href='employeeworkarea.php'">
-        <div class="itemIcon"><i class="fa fa-map-o" aria-hidden="true"></i></div><br>Employee Workarea</button>
-        </div>
-        
-        <div class="grid-item">
-        <button class="btm-space" type="submit" onclick="window.location.href='pricings.php'">
-        <div class="itemIcon"><i class="fa fa-credit-card" aria-hidden="true"></i></div><br>Pricings</button>
-        </div>
-    
-        <div class="grid-item"> 
-        <button class="btm-space" type="submit" onclick="window.location.href='largestorder.php'">
-        <div class="itemIcon"><i class="fa fa-line-chart" aria-hidden="true"></i></div><br>Largest Order</button>
-        </div>
-
-        <div class="grid-item"> 
-        <button class="btm-space" type="submit" onclick="window.location.href='popularcustomer.php'">
-        <div class="itemIcon"><i class="fa fa-fire" aria-hidden="true"></i></div><br>Popular Customer</button>
-        </div>
-        
-    </div>
-
-    <div class="divider" style="margin-bottom: 3%;">
     </div>
 
 </body>

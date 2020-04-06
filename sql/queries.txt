@@ -1,4 +1,5 @@
-//These are all the quereies used in SuperMail
+//These are all the quereies used in the SuperMail project
+
 
 //insert -- createorder.php
 INSERT INTO DeliveryOrder ( order_id,
@@ -20,42 +21,55 @@ VALUES ('$order_id',
         '$pricing', 
         '$receiver_id') ;
 
+
 //update -- update.php
 UPDATE DeliveryOrder 
 SET Delivery_Status = '$dropdownValue'
-WHERE Order_ID like '%$order%' ;
+WHERE Order_ID = $order ;  
+
 
 //selection, projection -- tracking.php
-SELECT order_id, initial_date, delivery_date, delivery_status 
+SELECT order_id, initial_date, delivery_status, $cust_cols
 FROM deliveryorder
-WHERE order_id like '%$where_cols%' ;
+WHERE order_id = $where_cols ;
+
 
 //delete -- delete.php
 DELETE FROM Employee 
-WHERE EID like '%$eid%' ;  
+WHERE EID = $eid ;
+
 
 //nested selection, projection -- traceemployee.php
 SELECT employee.ename, employee.ephone
 FROM employee
-WHERE employee.eid like (SELECT deliveryorder.eid
+WHERE employee.eid =    (SELECT deliveryorder.eid
                         FROM deliveryorder
-                        WHERE order_id like '%$order_id%') ;
+                        WHERE order_id = $order_id ) ;
 
-//join -- employeeworkarea.php
-SELECT employee.ename, employeeworkarea.work_area
-FROM employee
-INNER JOIN employeeworkarea ON employee.eid=employeeworkarea.eid
-ORDER BY employee.ename ASC ;
+
+//join -- join.php
+SELECT d.order_id, e.*
+FROM $jointarget e 
+INNER JOIN deliveryorder d ON e.eid=d.eid
+ORDER BY d.order_id ASC ;
+
 
 //aggregate -- pricings.php
 SELECT MIN(pricing), MAX(pricing), AVG(pricing)
 FROM deliveryorder ;
+
 
 //nested aggregate -- largestorder.php
 SELECT MAX(x.num)
 FROM    (SELECT COUNT(*) AS num
         FROM items GROUP BY order_id)x ;
 
-//division -- ???
-//TODO
 
+//division -- popularcustomer.php
+SELECT  c.customer_name
+        FROM customer c
+        WHERE NOT EXISTS    (SELECT * 
+                            FROM employee e
+                            WHERE NOT EXISTS    (SELECT o.customer_id
+                                                FROM deliveryorder o
+                                                WHERE c.customer_id=o.customer_id AND e.eid=o.eid ) ) ;

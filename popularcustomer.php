@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Popular Customers - SuperMail</title>
     <link rel="stylesheet" type="text/css" href="style/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -26,6 +27,8 @@ function showThisOrder($obConn,$sql) {
     $rsResult = mysqli_query($obConn, $sql) or die(mysqli_error($obConn));
     if(mysqli_num_rows($rsResult)>0) {
         
+      echo "<h3>Popular customers are customers that have been served by all our employees.</h3>";
+      echo nl2br("\n");
       echo "<h3>Popular customers:</h3>";
       echo nl2br("\n");
       echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#CCCCCC\">";
@@ -36,7 +39,7 @@ function showThisOrder($obConn,$sql) {
         echo $bolWhite ? "<tr bgcolor=\"#ffc53d\">" : "<tr bgcolor=\"#FFF\">";
           $bolWhite = !$bolWhite; 
           foreach ($row as $data) {
-            echo "<td style = \"text-align: center; padding: 15px 0; border: 1px solid; color: #333;\">$data</td>"; 
+            echo "<td style = \"text-align: center; padding: 15px 0; border: 0px; color: #333;\">$data</td>"; 
           }
           echo "</tr>";
       }

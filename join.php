@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Employee Details - SuperMail</title>
     <link rel="stylesheet" type="text/css" href="style/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,7 +15,7 @@
         <!-- <input type="submit" value="Back"> -->
         </form>
         <div class="headingTitle-employee">
-        <h2>This is where our employees work:</h2>
+        <h2>Join results:</h2>
         </div>
     </div>
 
@@ -51,10 +52,11 @@ function showThisOrder($obConn,$sql) {
 
 include 'connect.php';
 $conn = OpenCon();
-$sql = "SELECT employee.ename, employeeworkarea.work_area
-        FROM employee
-        INNER JOIN employeeworkarea ON employee.eid=employeeworkarea.eid
-        ORDER BY employee.ename ASC" ;
+$jointarget = $_POST['drop_down'];
+$sql = "SELECT d.order_id, e.*
+        FROM $jointarget e 
+        INNER JOIN deliveryorder d ON e.eid=d.eid
+        ORDER BY d.order_id ASC" ;
 showThisOrder($conn, $sql);
 CloseCon($conn);
 
