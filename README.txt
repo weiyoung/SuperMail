@@ -1,6 +1,6 @@
-SuperMail is a term project for CPSC 304 (Databases)
+SuperMail is a term project for CPSC 304 (Relational Databases)
 
-This project uses php and MySQL.
+This project uses PHP and MySQL.
 
 To setup:
 1. Download XAMPP at https://www.apachefriends.org/download.html and setup the MySQL database.
